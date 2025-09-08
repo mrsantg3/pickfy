@@ -1,0 +1,69 @@
+{
+  "name": "pickfy",
+  "version": "1.0.1",
+  "description": "Pick and omit object properties with utilities for arrays, case conversion, and more (TS, ESM+CJS).",
+  "license": "MIT",
+  "author": "Marcelo Santos",
+  "homepage": "https://github.com/mrsantg3/pickfy#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsantg3/pickfy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrsantg3/pickfy/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --clean",
+    "dev": "tsup src/index.ts --dts --format esm,cjs --watch",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test",
+    "lint": "eslint 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.35.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  },
+  "keywords": [
+    "pick",
+    "omit",
+    "typescript",
+    "utilities",
+    "case-converter",
+    "camelcase",
+    "snakecase",
+    "kebabcase"
+  ],
+  "project": {
+    "urls": {
+      "npm": "https://www.npmjs.com/package/pickfy",
+      "github": "https://github.com/mrsantg3/pickfy"
+    }
+  }
+}
